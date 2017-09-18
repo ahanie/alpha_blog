@@ -19,7 +19,7 @@ def update
         flash[:notice] = "Article was succesfully updated"
         redirect_to article_path(@article)
     else
-        render'edit'
+        render 'edit'
     end
 
 end
