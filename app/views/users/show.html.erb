@@ -5,6 +5,9 @@
         <%= gravatar_for @user %>
    </div>
  </div>
+ <div class="center">
+    <%= will_paginate @user_articles %>
+</div>
  <h4 align="center"> <%= @user.username %>'s articles </h4>
  <table>
  
@@ -26,5 +29,7 @@
      </td>
  </tr>
  <% end %>
- 
  </table>
+ <div class="center">
+    <%= will_paginate @user_articles %>
+ </div>
