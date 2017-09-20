@@ -1,3 +1,4 @@
+ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
@@ -6,4 +7,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def sign_in_as (user, password) #Keyword session can't be accessed in RUBY 5 unless you inherit from ActionController::TestCase just like categories_controller_test
+    post login_path, session: {email: user.email, password: password}
+  end
+
 end
